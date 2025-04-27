@@ -2,10 +2,13 @@ import axios from "axios";
 import { logout } from "./shared/utils/auth";
 
 const apiClient = axios.create({
-  baseURL: "https://chatx-rqq5.onrender.com/api", // Default to local if no environment variable
+  baseURL: process.env.REACT_APP_BACKEND_URL || "http://localhost:4444/api", // Default to local if no environment variable
   timeout: 1000,
 });
-
+// const apiClient = axios.create({
+//   baseURL: "https://chatx-rqq5.onrender.com/api", // Default to local if no environment variable
+//   timeout: 1000,
+// });
 apiClient.interceptors.request.use(
   (config) => {
     const userDetails = localStorage.getItem("user");

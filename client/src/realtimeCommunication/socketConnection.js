@@ -16,11 +16,16 @@ let socket = null;
 export const connectWithSocketServer = (userDetails) => {
   const jwtToken = userDetails.token;
 
-  socket = io("https://chatx-rqq5.onrender.com", {
+  socket = io("http://localhost:4444", {
     auth: {
       token: jwtToken,
     },
   });
+  // socket = io("https://chatx-rqq5.onrender.com", {
+  //   auth: {
+  //     token: jwtToken,
+  //   },
+  // });
 
   socket.on("connect", () => {
     console.log("succesfully connected with socket.io server");
