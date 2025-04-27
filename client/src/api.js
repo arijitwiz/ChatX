@@ -2,8 +2,7 @@ import axios from "axios";
 import { logout } from "./shared/utils/auth";
 
 const apiClient = axios.create({
-  // baseURL: "https://chatx-rqq5.onrender.com/api",
-  baseURL: "http://localhost:4444/api",
+  baseURL: process.env.REACT_APP_BACKEND_URL || "http://localhost:4444/api", // Default to local if no environment variable
   timeout: 1000,
 });
 
