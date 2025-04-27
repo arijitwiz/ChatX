@@ -2,7 +2,7 @@ import axios from "axios";
 import { logout } from "./shared/utils/auth";
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:4444/api",
+  baseURL: "https://chatx-rqq5.onrender.com/api",
   timeout: 1000,
 });
 
