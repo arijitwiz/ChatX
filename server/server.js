@@ -14,11 +14,7 @@ const PORT = process.env.PORT || process.env.API_PORT;
 const app = express();
 app.use(express.json());
 
-app.use(cors({
-  origin: "https://chat-x-git-main-soumyajit2035s-projects.vercel.app",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-}));
+app.use(cors());
 
 
 // register the routes
